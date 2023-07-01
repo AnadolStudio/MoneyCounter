@@ -18,9 +18,9 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="ru.anadol.studio.moneycounter.SecondFragment"
+        android:name="ru.anadol.studio.moneycounter.EditBottomDialog"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_bottom_dialog_edit">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

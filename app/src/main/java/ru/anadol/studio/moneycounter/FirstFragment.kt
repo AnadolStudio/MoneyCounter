@@ -6,39 +6,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.anadolstudio.core.common_util.throttleClick
+import com.anadolstudio.core.fragment.CoreBaseFragment
+import com.anadolstudio.core.viewbinding.viewBinding
+import com.google.android.material.snackbar.Snackbar
 import ru.anadol.studio.moneycounter.databinding.FragmentFirstBinding
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
-class FirstFragment : Fragment() {
+class FirstFragment : CoreBaseFragment<Unit>(R.layout.fragment_first) {
 
-    private var _binding: FragmentFirstBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
-        return binding.root
-
+    override fun render(state: Unit) {
+        TODO("Not yet implemented")
     }
+
+    private val binding: FragmentFirstBinding by viewBinding { FragmentFirstBinding.bind(requireView()) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.fab.throttleClick { }
 
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
