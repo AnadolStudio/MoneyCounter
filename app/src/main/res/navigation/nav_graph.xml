@@ -12,18 +12,5 @@
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="ru.anadol.studio.moneycounter.EditBottomDialog"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_bottom_dialog_edit">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
